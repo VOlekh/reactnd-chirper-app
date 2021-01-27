@@ -16,5 +16,4 @@ ReactDOM.render(
     <App />
   </Provider>,
 document.getElementById('root')
-) 
- 10  src/reducers
+);
