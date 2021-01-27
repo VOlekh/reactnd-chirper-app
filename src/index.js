@@ -5,11 +5,11 @@ import App from './components/App'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from './reducers'
-
+import middleware from './middleware'
 
 // ReactDOM.render(<App />, document.getElementById('root'))
 //Redux applications have a single store. We have to pass the Root Reducer to our createStore() function in order for the store to know what pieces of state it should have. The point of creating a store is to allow components to be able to access it without having to pass the data down through multiple components.
-const store = createStore(reducer)
+const store = createStore(reducer, middleware)
 
 ReactDOM.render(
     //Wrap main component inside Provider
