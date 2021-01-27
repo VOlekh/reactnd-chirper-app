@@ -8,6 +8,9 @@ Most of the commits in this repository correspond to videos in the program.
 
 * clone the Project - `git@github.com:udacity/reactnd-chirper-app.git`
 * install the dependencies - `npm install`
+* npm update. stop the server and run following - `npm react-reduxnpm update react react-dom`,  `npm redux`, `npm react-redux`
+* run server
+
 
 ## Contributing
 
