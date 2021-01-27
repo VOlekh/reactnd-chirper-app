@@ -8,6 +8,7 @@ import reducer from './reducers'
 
 
 // ReactDOM.render(<App />, document.getElementById('root'))
+//Redux applications have a single store. We have to pass the Root Reducer to our createStore() function in order for the store to know what pieces of state it should have. The point of creating a store is to allow components to be able to access it without having to pass the data down through multiple components.
 const store = createStore(reducer)
 
 ReactDOM.render(
