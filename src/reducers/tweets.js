@@ -1,5 +1,5 @@
 import { RECEIVE_TWEETS} from "../actions/tweets";
-
+//The tweets slice of the state in the store has been initialized to an empty object.
 export default function tweets(state = {}, action) {
   switch (action.type) {
     case RECEIVE_TWEETS:
