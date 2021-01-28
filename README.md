@@ -10,6 +10,8 @@ Most of the commits in this repository correspond to videos in the program.
 * install the dependencies - `npm install`
 * npm update. stop the server and run following - `npm add react-redux' 'npm update react react-dom`,  `npm add redux`
 * run server
+* `add redux-thunk`
+* If you get the error TypeError: Cannot call a class as a function, check you haven't imported thunk from react-thunk rather than redux-thunk.
 
 
 ## Contributing
