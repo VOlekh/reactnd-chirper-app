@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddTweet } from '../actions/tweets'
+import { Redirect } from 'react-router-dom'
 
 class NewTweet extends Component {
   state = {
       //set state as empty string
     text: '',
+    toHome: false,
   }
 
 
@@ -24,20 +26,28 @@ class NewTweet extends Component {
     const { text } = this.state
     const { dispatch, id } = this.props
 
-    // todo: Add Tweet to Store
+    // Add Tweet to Store
     console.log('New Tweet: ', text)
     dispatch(handleAddTweet(text, id))
     // reset to empty string
     this.setState(() => ({
-      text: ''
+        //instead of resetting a text to an empty string
+      text: '',
+      // if reply to tweet we want to stay on a page, if we compose new tweet we go home
+      // if id is a thing, then toHome is false, if not - true
+      toHome: id ? false : true,
     }))
   }
 
 
   render() {
-    const { text } = this.state
+    const { text, toHome } = this.state
 
-    {/* todo: Redirect to home - / if submitted */}
+    {/* Redirect to home - / if submitted */}
+    // logic on new tweet or retweet, return on home page if new tweet, stay  if retweet
+    if (toHome === true) {
+        return <Redirect to='/' />
+      }
 
     const tweetLeft = 280 - text.length
 

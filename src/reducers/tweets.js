@@ -41,7 +41,7 @@ export default function tweets(state = {}, action) {
                 //ans tthe object for this tweet is what was before
               ...state[tweet.replyingTo],
               //what we want to modify 
-              replies: state[tweet.replyTo].replies.concat([tweet.id])
+              replies: state[tweet.replyingTo].replies.concat([tweet.id])
             }
         }
       }
