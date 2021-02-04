@@ -2,28 +2,93 @@
 
 This repo is a code-along with the first project in the [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-Most of the commits in this repository correspond to videos in the program.
+Building this simple Twitter clone help practice improving the predictability of an application's state; establishing strict rules for getting, listening, and updating the store; and identifying what state should live inside of Redux and what state should live inside of React components.
 
-## Project Setup
 
-* clone the Project - `git@github.com:udacity/reactnd-chirper-app.git`
+# UI
+## Design
+![image](img/Twitter.gif)
+
+
+
+# Project Setup
+
 * install the dependencies - `npm install`
 * npm update. stop the server and run following - `npm add react-redux' 'npm update react react-dom`,  `npm add redux`
-* run server
 * `add redux-thunk`
 * If you get the error TypeError: Cannot call a class as a function, check you haven't imported thunk from react-thunk rather than redux-thunk.
+* add router `npm add react-router-dom`
 
+## Planning Stages
 
-## Contributing
+- Identify What Each View Should Look Like
+- Break Each View Into a Hierarchy of Components
+- Determine What Events Happen in the App
+- Determine What Data Lives in the Store
 
-Because this is a code-along project and the commits correspond to specific videos in the program, we will not be accepting pull requests.
+## Requirements
 
-If you feel like there's a major problem, please open an issue to discuss the problem and potential resolution.
+There are the 3 views we need in our app:
 
-## License
+- Dashboard
+- Tweet
+- New Tweet
 
-MIT
+Dashboard View Requirements
+- is located at the home route (/)
+- shows tweets sorted from most recently added at the top, to oldest at the bottom
+- each tweet will show:
+    - the author
+    - the time stamp
+    - who the author is replying to
+    - the text of the tweet
+    - a reply button - with the number of replies (if higher than 0)
+    - a like button - with the number of likes (if higher than 0)
 
+Tweet Page View Requirements
+- is located at /tweet/:id
+- shows an individual tweet
+    - the author
+    - the time stamp
+    - a reply button - with the number of replies (if higher than 0)
+    - a like button - with the number of likes (if higher than 0)
+- has a reply form
+- shows all replies
+
+The New Tweet View Requirements
+- is located at /new
+- has a textbox for adding a new tweet
+   
+
+## Components
+Components for the Dashboard View:
+![image](img/nd019-redux-l7-components-01-dashboard.png)
+- App - the overall container for the project
+- Navigation - displays the navigation
+- Tweets List - responsible for the entire list of tweets
+- Tweet - in charge of display the content for a single tweet
+
+Components for the Tweet View:
+![image](img/nd019-redux-l7-components-02-tweet.png)
+- App - the overall container for the project
+- Navigation - displays the navigation
+- Tweet Container - displays a list of tweets
+- Tweet - displays the content for a single tweet
+- New Tweet - display the form to create a new tweet (reply)
+
+Components for the New Tweet View:
+![image](img/nd019-redux-l7-components-03-new-tweet.png)
+- App - the overall container for the project
+- Navigation - displays the navigation
+- New Tweet - display the form to create a new tweet
+
+# The Store
+The Store contains a tweets property and a users property, and an authedUser property
+- tweets
+- users
+- authedUsers
+
+# Notes
 Adding a New Tweet
 Let’s now work on the logic of adding a new tweet. Once the user submits a new tweet, it should show up in the list of all of tweets and be added to our database. Since this tweet will be used by more than one component, we know that we want to make sure the store is modified to reflect the updated list of tweets. Recording tweets in a database is an asynchronous operation, so we can use Redux Thunk to issue the API request.
 
