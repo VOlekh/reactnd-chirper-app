@@ -5,8 +5,8 @@ This repo is a code-along with the first project in the [React Nanodegree progra
 Building this simple Twitter clone help practice improving the predictability of an application's state; establishing strict rules for getting, listening, and updating the store; and identifying what state should live inside of Redux and what state should live inside of React components.
 
 
-# UI
-## Design
+
+# Design
 ![image](img/Twitter.gif)
 
 
@@ -15,9 +15,7 @@ Building this simple Twitter clone help practice improving the predictability of
 
 * install the dependencies - `npm install`
 * npm update. stop the server and run following - `npm add react-redux' 'npm update react react-dom`,  `npm add redux`
-* `add redux-thunk`
-* If you get the error TypeError: Cannot call a class as a function, check you haven't imported thunk from react-thunk rather than redux-thunk.
-* add router `npm add react-router-dom`
+* start server
 
 ## Planning Stages
 
@@ -82,6 +80,8 @@ Components for the New Tweet View:
 - Navigation - displays the navigation
 - New Tweet - display the form to create a new tweet
 
+Note:  Text and pictures taken from udacity.com React Nanodegree Program
+
 # The Store
 The Store contains a tweets property and a users property, and an authedUser property
 - tweets
@@ -112,3 +112,9 @@ will show up inside of the App Component when the user goes to the /new page and
 When the user is at the /new route, the new tweet will not be attached to another tweet. When the user is at the tweet/:id route, the new tweet will be attached to the already-displayed tweet. Notice that the route already contains the parent tweet’s id. We can just pass the id from the route to the New Tweet Component whenever we’re creating a reply tweet.
 
 What happens when someone clicks “Submit” to add a new tweet? The New Tweet Component will need to communicate with our store. We communicate with the store by dispatching actions. dispatch is a method on the store. That means that the New Tweet Component needs to be connect()ed to Redux. Once a component is connected to the store, it will have dispatch on its props.
+
+* `add redux-thunk`
+* If you get the error TypeError: Cannot call a class as a function, check you haven't imported thunk from react-thunk rather than redux-thunk.
+* add router `npm add react-router-dom`
+
+
