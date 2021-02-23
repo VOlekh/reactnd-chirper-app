@@ -90,7 +90,7 @@ class Tweet extends Component {
     )
   }
 }
-// what state component need from store
+// what state component needs from store
 function mapStateToProps ({authedUser, users, tweets}, { id }) {
   const tweet = tweets[id]
   //Parent tweet has parameter replyingTo: "czpa59mg577x1oo45cup0d" const parentTweet = tweets[tweet.replyingTo]
